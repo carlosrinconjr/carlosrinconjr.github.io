@@ -34,3 +34,10 @@ Chapter scenes (assets/chapters/illus-*.jpg) are generated illustrations, not re
 - Cañadas de Obregón, Jalisco: Cañadas de Obregón <https://en.wikipedia.org/wiki/Cañadas_de_Obregón>; Cañadas de Obregón (Spanish) <https://es.wikipedia.org/wiki/Cañadas_de_Obregón>; Los Altos de Jalisco <https://en.wikipedia.org/wiki/Los_Altos_de_Jalisco>; Cristero War <https://en.wikipedia.org/wiki/Cristero_War>; INAFED, Enciclopedia de los Municipios: Cañadas de Obregón (archived) <https://web.archive.org/web/20210518084912/http://www.inafed.gob.mx/work/enciclopedia/EMM14jalisco/municipios/14117a.html>; Spanish flu <https://en.wikipedia.org/wiki/Spanish_flu>; Bracero Program <https://en.wikipedia.org/wiki/Bracero_Program>
 - Chicago, Illinois: Mexicans in Chicago <https://en.wikipedia.org/wiki/Mexicans_in_Chicago>; Chicago (U.S. Census table) <https://en.wikipedia.org/wiki/Chicago#Demographics>; South Works <https://en.wikipedia.org/wiki/South_Works>; South Lawndale (Little Village) <https://en.wikipedia.org/wiki/South_Lawndale,_Chicago>; 1995 Chicago heat wave <https://en.wikipedia.org/wiki/1995_Chicago_heat_wave>
 - Orange County, California: Orange County, California <https://en.wikipedia.org/wiki/Orange_County,_California>; Orange County (U.S. Census table) <https://en.wikipedia.org/wiki/Orange_County,_California#Demographics>
+
+## Family photos (assets/photos/)
+
+Confirmed by family. Shared on the FamilySearch Family Tree (Memories) by family tree contributor JaramilloVillanuevaFlorinade1.
+
+- `carlos-rincon-beltran-portrait.jpg` (and the cropped `carlos-rincon-beltran-face.jpg`): Carlos Rincón Beltrán (1932–1997), memory titled "MI TIO CARLOS RINCON BELTRAN".
+- `bruno-natalia-wedding.jpg` (and the cropped `bruno-rincon-face.jpg`, `natalia-beltran-face.jpg`): Natalia Beltrán and Bruno Carlos Rincón, likely their wedding, about 1931; memory titled "mis abuelos natalia y carlos bruno".

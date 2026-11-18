@@ -42,6 +42,7 @@ window.CHAPTERS = [
 
  {k:'chihuahua', n:'Chihuahua', es:'Chihuahua, Chihuahua', era:'1903–1932 · the northern capital', l:V,
   illus:'illus-chihuahua.jpg',
+  famPhotos:['bruno','crb'],
   history:[
    'Chihuahua grew out of a silver-mining settlement. In 1718 it became the villa of San Felipe el Real de Chihuahua, and a tax on silver from the Santa Eulalia mines paid for its parish church, today’s cathedral, built between 1725 and 1792.',
    'In 1882 the Mexican Central Railway opened its line from Ciudad Juárez to Chihuahua. During the presidency of Porfirio Díaz the city grew explosively.',

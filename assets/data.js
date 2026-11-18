@@ -219,5 +219,16 @@ const stops = [
   {k:'orange', n:'Orange County, California', y:'2026', l:S, t:'Home today for Carlos Jr. and Diana, and soon their baby girl.'}
 ];
 
+/* Family photos confirmed by family (from FamilySearch Memories). Only deceased ancestors. */
+const MEM = pid => 'https://www.familysearch.org/tree/person/memories/' + pid;
+const BY = 'Family tree contributor JaramilloVillanuevaFlorinade1';
+people.crb.photo = {avatar:'carlos-rincon-beltran-face.jpg', f:'carlos-rincon-beltran-portrait.jpg', w:515, h:542,
+  cap:'Carlos Rincón Beltrán (1932–1997)', title:'“Mi tío Carlos Rincón Beltrán”', by:BY, url:MEM('L6T1-VR9')};
+const wedding = {f:'bruno-natalia-wedding.jpg', w:717, h:960,
+  cap:'Natalia Beltrán and Bruno Carlos Rincón, likely their wedding, about 1931', title:'“Mis abuelos Natalia y Carlos Bruno”', by:BY};
+people.bruno.photo = Object.assign({avatar:'bruno-rincon-face.jpg', url:MEM('KCSD-NHR')}, wedding);
+people.natalia.photo = Object.assign({avatar:'natalia-beltran-face.jpg', url:MEM('KHKT-CYN')}, wedding);
+Object.values(people).forEach(x => { if (x.living) delete x.photo; });
+
 window.FAMILY = {people, events, stops};
 })();

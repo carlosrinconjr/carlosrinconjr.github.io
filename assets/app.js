@@ -34,10 +34,13 @@ function card(id){
   const meta = p.living
     ? `<span class="lock">${lockSvg} Private · name only</span>`
     : `${p.years ? `<span class="p-years">${esc(p.years)}</span>` : ''}${p.label ? badge(p.label) : ''}`;
-  return `<button class="${cls}" data-id="${id}">
-    <span class="p-name">${esc(p.name)}</span>
+  const ph = !p.living && p.photo;
+  const txt = `<span class="p-name">${esc(p.name)}</span>
     <span class="p-rel">${esc(relWord(p))}</span>
-    <span class="p-meta">${meta}</span></button>`;
+    <span class="p-meta">${meta}</span>`;
+  return `<button class="${cls}${ph ? ' has-photo' : ''}" data-id="${id}">${ph
+    ? `<img class="p-avatar" src="assets/photos/${esc(ph.avatar)}" alt="" width="48" height="48" loading="lazy"><span class="p-txt">${txt}</span>`
+    : txt}</button>`;
 }
 function branch(id){
   const p = people[id];
@@ -92,6 +95,10 @@ function recRow(r){
   return `<li class="rec">${thumb}<div><div class="rec-t">${esc(r.t)}</div>
     <div class="rec-links">${badge(r.l, r.n)}${r.url ? `<a href="${esc(r.url)}" target="_blank" rel="noopener">FamilySearch ↗</a>` : ''}</div></div></li>`;
 }
+function famPhoto(ph, cls){
+  return `<figure class="fam-photo ${cls||''}"><button class="hp-img fp-img" data-full="assets/photos/${esc(ph.f)}" data-cap="${esc(ph.cap)} · Family photo, confirmed by family"><img src="assets/photos/${esc(ph.f)}" alt="${esc(ph.cap)}" width="${ph.w}" height="${ph.h}" loading="lazy"></button>
+    <figcaption><b>${esc(ph.cap)}</b><span class="fp-conf">📷 Family photo, confirmed by family</span><span>${esc(ph.title)} · ${esc(ph.by)} · <a href="${esc(ph.url || '')}" target="_blank" rel="noopener">FamilySearch Memories ↗</a></span></figcaption></figure>`;
+}
 function openSheet(id){
   const p = people[id]; lastFocus = document.activeElement;
   const kid = childOf[id];
@@ -104,6 +111,7 @@ function openSheet(id){
     h += `<div class="s-sub">${p.years ? `<b>${esc(p.years)}</b>` : ''}${p.label ? badge(p.label) : ''}</div>`;
     if (p.link) h += `<p class="s-link"><span class="linkpill">${esc(p.link)}</span></p>`;
     if (p.places && p.places.length) h += `<ul class="s-places">${p.places.map(x => `<li>📍 ${esc(x)}</li>`).join('')}</ul>`;
+    if (p.photo) h += `<h3 class="s-h">Family photo</h3>${famPhoto(p.photo, 'in-sheet')}`;
     const feat = (p.records||[]).find(r => r.img && IMGS.has(r.img));
     h += feat ? `<button class="feature rec-thumb" data-img="${esc(feat.img)}" data-cap="${esc(feat.t)}"><img src="assets/records/${esc(feat.img)}" alt="${esc(feat.t)}"><span>${esc(feat.t)} · tap to enlarge</span></button>`
       : `<div class="feature empty"><span>Record image coming soon</span></div>`;
@@ -223,6 +231,9 @@ const PLACE_NAME = {}; CH.forEach(c => { PLACE_NAME[c.k] = c.n.split(',')[0]; })
         ${tn}
       </section>`;
     }
+    const famPh = []; const seenF = new Set();
+    (c.famPhotos || []).forEach(w => { const ph = people[w] && !people[w].living && people[w].photo; if (ph && !seenF.has(ph.f)) { seenF.add(ph.f); famPh.push(ph); } });
+    const famBlock = famPh.length ? `<div class="ch-famphotos"><h4>Family photos <span>Fotos de la familia</span></h4><div class="fp-grid ${famPh.length>1?'two':''}">${famPh.map(ph => famPhoto(ph)).join('')}</div></div>` : '';
     const photos2 = photoList.map(ph => `<figure class="hp"><button class="hp-img" data-full="assets/history/${esc(ph.f)}" data-cap="${esc(ph.cap)}"><img src="assets/history/${esc(ph.f)}" alt="${esc(ph.cap)}" loading="lazy"></button>
       <figcaption><b>${esc(ph.cap)}</b><span>${esc(ph.by)} · ${esc(ph.src)} · ${ph.licUrl ? `<a href="${esc(ph.licUrl)}" target="_blank" rel="noopener">${esc(ph.lic)}</a>` : esc(ph.lic)} · <a href="${esc(ph.url)}" target="_blank" rel="noopener">file page ↗</a></span></figcaption></figure>`).join('');
     return `<article class="chapter" id="place-${c.k}">
@@ -234,6 +245,7 @@ const PLACE_NAME = {}; CH.forEach(c => { PLACE_NAME[c.k] = c.n.split(',')[0]; })
           </div>
         <div class="ch-family"><h4>Our family here</h4><ul class="fam">${fam}</ul></div>
       </div>
+      ${famBlock}
       ${life}
       ${photoList.length ? `<div class="ch-photos ${photoList.length>1?'two':''}">${photos2}</div>` : ''}
       <p class="ch-sources">Sources: ${srcs.map(([t,u]) => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)}</a>`).join(' · ')}</p>
