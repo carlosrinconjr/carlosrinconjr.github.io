@@ -1,0 +1,25 @@
+name: Unpack site files
+on:
+  push:
+    branches: [main]
+    paths: ['_pack/READY']
+permissions:
+  contents: write
+jobs:
+  unpack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rebuild images and fonts from the uploaded pack
+        run: |
+          set -euo pipefail
+          cat _pack/site.tar.b64.part* | base64 -d > /tmp/site.tar
+          echo "$(cut -d' ' -f1 _pack/TAR.sha256)  /tmp/site.tar" | sha256sum -c
+          tar -xf /tmp/site.tar
+          sha256sum -c _pack/FILES.sha256
+          git rm -r -q _pack
+          git config user.name "github-actions[bot]"
+          git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Unpack site images and fonts"
+          git push
