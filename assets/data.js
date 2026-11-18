@@ -17,7 +17,7 @@ const people = {
   alexander:{name:'Alexander Hamilton', living:true, today:true, gen:0, sex:'m', side:'dad', rel:'Nephew · Sobrino', note:'Dorima and Jason’s son.', src:'Family story · from Carlos, Nov 2026', parents:['dorima','jasonh']},
   vanessa:{name:'Vanessa Rincon', living:true, today:true, gen:1, sex:'f', side:'dad', rel:'Sister-in-law · Cuñada', note:'Joshua’s wife, born Salcedo.', src:'Family story · from Carlos, Nov 2026', parents:[]},
   elijah:{name:'Elijah Rincon', living:true, today:true, gen:0, sex:'m', side:'dad', rel:'Nephew · Sobrino', note:'Joshua and Vanessa’s son.', src:'Family story · from Carlos, Nov 2026', parents:['joshua','vanessa']},
-  kirsten:{name:'Kirsten “Key” Rincon', living:true, today:true, gen:1, sex:'f', side:'dad', rel:'Sister-in-law · Cuñada', note:'Sammy’s wife.', src:'Family story · from Carlos, Nov 2026', parents:[]},
+  kyrstin:{name:'Kyrstin “Key” Rincon', living:true, today:true, gen:1, sex:'f', side:'dad', rel:'Sister-in-law · Cuñada', note:'Sammy’s wife.', src:'Family story · from Carlos, Nov 2026', parents:[]},
   joshua:{name:'Joshua Rincon', living:true, byear:1997, today:true, gen:1, sex:'m', side:'dad', rel:'Brother · Hermano', src:'Family story · from Carlos, Nov 2026', parents:['carlossr','amparo']},
   daniel:{name:'Daniel Samuel “Sammy” Rincon', living:true, byear:2000, today:true, gen:1, sex:'m', side:'dad', rel:'Brother · Hermano', src:'Family story · from Carlos, Nov 2026', parents:['carlossr','amparo']},
 
@@ -247,7 +247,7 @@ const siblings = [
   {id:'dorima', spouse:'jasonh', kids:['penelope','alexander']},
   {id:'carlosjr', you:true},
   {id:'joshua', spouse:'vanessa', kids:['elijah']},
-  {id:'daniel', spouse:'kirsten'}
+  {id:'daniel', spouse:'kyrstin'}
 ];
 
 window.FAMILY = {people, events, stops, siblings};
