@@ -1,0 +1,13 @@
+window.RECORD_IMAGES=[
+ "1879-baptism-juan-rincon-barron.jpg",
+ "1897-marriage-intent-juan-rincon-juana-barbosa.jpg",
+ "1920-birth-ranulfo-jimenez-loza.jpg",
+ "1921-birth-clemencia-munoz-de-la-torre.jpg",
+ "1931-marriage-carlos-rincon-natalia-beltran.jpg",
+ "1932-birth-carlos-rincon-beltran-index-screenshot.jpg",
+ "1940-marriage-juan-ramirez-maria-refugio-diaz.jpg",
+ "1946-marriage-ranulfo-jimenez-clemencia-munoz.jpg",
+ "1947-death-luz-maria-jimenez-munoz.jpg",
+ "1989-death-carlos-bruno-rincon-barbosa.jpg",
+ "1997-death-carlos-rincon-cook-county-index-screenshot.jpg"
+];

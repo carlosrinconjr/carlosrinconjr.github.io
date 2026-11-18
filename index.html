@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Familia Rincón · Where We Come From</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar" id="top">
+  <a class="brand" href="#top"><span class="brand-mark">R</span><span>Familia Rincón</span></a>
+  <nav class="nav">
+    <a href="#tree">Tree</a><a href="#map">Map</a><a href="#places">Places</a><a href="#timeline">Timeline</a>
+  </nav>
+</header>
+
+<main>
+  <!-- 1. Welcome -->
+  <section class="hero" id="welcome">
+    <div class="hero-inner">
+      <p class="eyebrow">Rincón · Jiménez · Beltrán · Ramírez</p>
+      <h1>Familia Rincón: <em>where we come from.</em></h1>
+      <div class="photo-frame">
+        <div class="photo-slot" role="img" aria-label="Family photo coming soon">
+          <svg viewBox="0 0 64 64" aria-hidden="true"><rect x="10" y="18" width="44" height="32" rx="4" fill="none" stroke="currentColor" stroke-width="2.4"/><circle cx="32" cy="34" r="8" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M24 18l3-5h10l3 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg>
+          <span>Family photo<br><small>coming soon</small></span>
+        </div>
+        <p class="photo-caption">La familia</p>
+      </div>
+      <div class="letter intro">
+        <p class="intro-lead">Bienvenidos, familia.</p>
+        <p>This is our family history, put together from church books, civil registers, and death records found on FamilySearch, and from the stories our parents and grandparents have shared.</p>
+        <p>It follows the Rincón line back to Zacatecas in the 1800s, and the Jiménez and Muñoz families of Cañadas de Obregón, Jalisco. Every fact is labeled so you can see what a record proves and what is still a family story.</p>
+        <p>Know a name, a date, or a story we're missing? Tell Carlos Jr. and we'll add it. And there's a new branch on the way: Carlos Jr. and Diana's baby girl arrives in December 2026.</p>
+      </div>
+      <ul class="stats" id="stats"></ul>
+      <a class="cta" href="#tree">Explore the family tree <span aria-hidden="true">↓</span></a>
+    </div>
+  </section>
+
+  <!-- 2. Tree -->
+  <section class="section" id="tree">
+    <div class="section-head">
+      <p class="eyebrow">Árbol familiar</p>
+      <h2>The family tree</h2>
+      <p class="lede">Relationships are shown from Carlos Jr.’s point of view. Tap anyone to open their story, and tap “parents” to follow a branch back in time.</p>
+    </div>
+    <div class="tree-wrap">
+      <div class="root">
+        <div class="root-couple"><div id="root-carlosjr"></div><span class="amp" aria-hidden="true">&amp;</span><div id="root-diana"></div></div>
+        <button class="baby-chip" data-id="baby"><span class="sprout" aria-hidden="true">✿</span> Baby girl · coming Dec 2026</button>
+      </div>
+      <div class="side-switch seg" role="tablist" aria-label="Choose a side">
+        <button role="tab" class="on" data-side="dad">Carlos’s side · <b>Rincón</b></button>
+        <button role="tab" data-side="mom">Diana’s side</button>
+      </div>
+      <div class="sides">
+        <div class="side side-dad on" data-panel="dad">
+          <div class="side-title"><span class="dot dad"></span>Carlos Jr.’s side</div>
+          <div class="line-switch seg small" role="tablist" aria-label="Choose a line">
+            <button role="tab" class="on" data-line="rincon">Dad’s line · Rincón</button>
+            <button role="tab" data-line="jimenez">Mom’s line · Jiménez</button>
+          </div>
+          <div class="lines">
+            <div class="line on" data-linepanel="rincon">
+              <h3 class="line-title">Dad’s line <span>Rincón · Beltrán · Ramírez</span></h3>
+              <div id="line-rincon"></div>
+            </div>
+            <div class="line" data-linepanel="jimenez">
+              <h3 class="line-title">Mom’s line <span>Jiménez · Muñoz · de la Torre</span></h3>
+              <div id="line-jimenez"></div>
+            </div>
+          </div>
+        </div>
+        <div class="side side-mom" data-panel="mom">
+          <div class="side-title"><span class="dot mom"></span>Diana’s side</div>
+          <div class="soon">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 44V22M24 22c0-8 6-12 14-12-1 8-6 12-14 12zM24 28c0-6-5-10-12-10 1 7 5 10 12 10z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <h3>Diana’s family, coming soon</h3>
+            <p>We haven’t started this side yet. Her parents, grandparents, and their stories will grow right here.</p>
+          </div>
+        </div>
+      </div>
+      <div class="tree-tools"><button id="expandAll">Open all branches</button><button id="collapseAll">Close all</button></div>
+    </div>
+  </section>
+
+  <!-- 3. Map -->
+  <section class="section alt" id="map">
+    <div class="section-head">
+      <p class="eyebrow">El camino</p>
+      <h2>The family’s journey</h2>
+      <p class="lede">Places where records and family stories put our family, oldest first.</p>
+    </div>
+    <div class="map-card">
+      <div class="map-figure" id="mapFigure"></div>
+      <ol class="stops" id="stops"></ol>
+    </div>
+  </section>
+
+  <!-- 3b. Places -->
+  <section class="section places" id="places">
+    <div class="section-head">
+      <p class="eyebrow">De dónde venimos</p>
+      <h2>Where we come from</h2>
+      <p class="lede">One chapter for each place in our story, in order: what the place was like when our family lived there, and who from our family was there.</p>
+    </div>
+    <nav class="place-nav" id="placeNav" aria-label="Chapters"></nav>
+    <div id="chapters"></div>
+  </section>
+
+  <!-- 4. Timeline -->
+  <section class="section" id="timeline">
+    <div class="section-head">
+      <p class="eyebrow">Línea del tiempo</p>
+      <h2>From Genaro to today</h2>
+      <p class="lede">About 175 years of dated moments, from the records we’ve found so far.</p>
+    </div>
+    <div class="seg small tl-filter" role="tablist" aria-label="Filter the timeline">
+      <button class="on" data-f="all">Everyone</button><button data-f="rincon">Rincón line</button><button data-f="jimenez">Jiménez line</button>
+    </div>
+    <ol class="timeline" id="tl"></ol>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="legend">
+    <h3>What the labels mean</h3>
+    <ul>
+      <li><span class="badge verified">Verified</span> An original record (or its official index) proves this person, their relationship, or this fact.</li>
+      <li><span class="badge likely">Likely</span> From a shared family tree or a record that fits but isn’t fully proven.</li>
+      <li><span class="badge story">Family story</span> Told by the family and not yet confirmed by a record.</li>
+    </ul>
+    <p class="legend-note">A person’s badge in the tree is Verified only when a record proves who they are and how they’re related. People known mainly from the FamilySearch shared tree show Likely. A <span class="linkpill">family-confirmed link</span> marks a connection the family knows but no record shows yet. Open anyone to see the label on every fact.</p>
+  </div>
+  <p class="credit">Researched with public records from FamilySearch. Place history from the linked Wikipedia articles; historic photos from Wikimedia Commons, credited under each one. Chapter scenes are illustrations, not real photos.<br>Living family members are shown by name only, to keep them private.</p>
+  <p class="sample">Sample preview · November 2026</p>
+</footer>
+
+<!-- Person sheet -->
+<div class="sheet-backdrop" id="backdrop" hidden></div>
+<aside class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetName" hidden>
+  <button class="sheet-close" id="sheetClose" aria-label="Close">×</button>
+  <div id="sheetBody"></div>
+</aside>
+<div class="lightbox" id="lightbox" hidden><button class="sheet-close" aria-label="Close">×</button><img alt=""><p></p></div>
+
+<script src="assets/map-data.js"></script>
+<script src="assets/records-manifest.js"></script>
+<script src="assets/data.js"></script>
+<script src="assets/chapters.js"></script>
+<script src="assets/life.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
