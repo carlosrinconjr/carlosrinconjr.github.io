@@ -10,6 +10,16 @@ const people = {
   baby:{name:'Baby girl Rincón', living:true, gen:0, sex:'f', side:'both', rel:'Daughter · Hija', note:'Coming December 2026, the newest branch of the family.', parents:['carlosjr','diana']},
   carlosjr:{name:'Carlos Rincon Jr.', living:true, gen:1, sex:'m', side:'dad', rel:'Starting point', parents:['carlossr','amparo']},
   diana:{name:'Diana', living:true, gen:1, sex:'f', side:'mom', rel:'Wife · Esposa', parents:[]},
+  /* ---------- Carlos Jr.’s brothers and sisters and their families (all living: names only) ---------- */
+  dorima:{name:'Dorima Hamilton', living:true, today:true, gen:1, sex:'f', side:'dad', rel:'Sister · Hermana', note:'Born Rincon; Hamilton is her married name.', src:'Family story · from Carlos, Nov 2026', parents:['carlossr','amparo']},
+  jasonh:{name:'Jason J. Hamilton', living:true, today:true, gen:1, sex:'m', side:'dad', rel:'Brother-in-law · Cuñado', note:'Dorima’s husband.', src:'Family story · from Carlos, Nov 2026', parents:[]},
+  penelope:{name:'Penelope Rose Hamilton', living:true, today:true, gen:0, sex:'f', side:'dad', rel:'Niece · Sobrina', note:'Dorima and Jason’s daughter.', src:'Family story · from Carlos, Nov 2026', parents:['dorima','jasonh']},
+  alexander:{name:'Alexander Hamilton', living:true, today:true, gen:0, sex:'m', side:'dad', rel:'Nephew · Sobrino', note:'Dorima and Jason’s son.', src:'Family story · from Carlos, Nov 2026', parents:['dorima','jasonh']},
+  vanessa:{name:'Vanessa Rincon', living:true, today:true, gen:1, sex:'f', side:'dad', rel:'Sister-in-law · Cuñada', note:'Joshua’s wife, born Salcedo.', src:'Family story · from Carlos, Nov 2026', parents:[]},
+  elijah:{name:'Elijah Rincon', living:true, today:true, gen:0, sex:'m', side:'dad', rel:'Nephew · Sobrino', note:'Joshua and Vanessa’s son.', src:'Family story · from Carlos, Nov 2026', parents:['joshua','vanessa']},
+  kirsten:{name:'Kirsten “Key” Rincon', living:true, today:true, gen:1, sex:'f', side:'dad', rel:'Sister-in-law · Cuñada', note:'Sammy’s wife.', src:'Family story · from Carlos, Nov 2026', parents:[]},
+  joshua:{name:'Joshua Rincon', living:true, today:true, gen:1, sex:'m', side:'dad', rel:'Brother · Hermano', src:'Family story · from Carlos, Nov 2026', parents:['carlossr','amparo']},
+  daniel:{name:'Daniel Samuel “Sammy” Rincon', living:true, today:true, gen:1, sex:'m', side:'dad', rel:'Brother · Hermano', src:'Family story · from Carlos, Nov 2026', parents:['carlossr','amparo']},
 
   /* ---------- Dad's father's line (Rincón) ---------- */
   carlossr:{name:'Carlos Rincon', living:true, gen:2, sex:'m', side:'dad', line:'rincon', parents:['crb','aurora']},
@@ -231,5 +241,14 @@ people.bruno.photo = Object.assign({avatar:'bruno-rincon-face.jpg', url:MEM('KCS
 people.natalia.photo = Object.assign({avatar:'natalia-beltran-face.jpg', url:MEM('KHKT-CYN')}, wedding);
 Object.values(people).forEach(x => { if (x.living) delete x.photo; });
 
-window.FAMILY = {people, events, stops};
+/* Children of Carlos Sr. and Amparo, oldest to youngest. To add a spouse or children later,
+   add the person above and list their id here as spouse or in kids. */
+const siblings = [
+  {id:'dorima', spouse:'jasonh', kids:['penelope','alexander']},
+  {id:'carlosjr', you:true},
+  {id:'joshua', spouse:'vanessa', kids:['elijah']},
+  {id:'daniel', spouse:'kirsten'}
+];
+
+window.FAMILY = {people, events, stops, siblings};
 })();

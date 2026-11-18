@@ -1,6 +1,6 @@
 (function(){
 'use strict';
-const {people, events, stops} = window.FAMILY;
+const {people, events, stops, siblings = []} = window.FAMILY;
 const IMGS = new Set(window.RECORD_IMAGES || []);
 const $ = (s, r=document) => r.querySelector(s);
 const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
@@ -11,7 +11,7 @@ const lockSvg = '<svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="7" w
 
 /* child lookup, relationship words */
 const childOf = {};
-Object.entries(people).forEach(([id, p]) => (p.parents||[]).forEach(pid => { childOf[pid] = id; }));
+Object.entries(people).forEach(([id, p]) => { if (!p.today) (p.parents||[]).forEach(pid => { childOf[pid] = id; }); });
 function relWord(p){
   if (p.rel) return p.rel;
   const m = p.sex === 'm', g = p.gen - 1;   /* generations above Carlos Jr. */
@@ -55,6 +55,19 @@ function branch(id){
 }
 $('#root-carlosjr').innerHTML = card('carlosjr');
 $('#root-diana').innerHTML = card('diana');
+/* brothers and sisters, oldest to youngest, with their spouses and children */
+(function drawSiblings(){
+  const el = $('#siblings'); if (!el || !siblings.length) return;
+  const youCard = id => `<button class="person m living you" data-id="${id}"><span class="p-name">${esc(people[id].name)}</span><span class="p-rel">You · Tú</span></button>`;
+  el.innerHTML = `<h3 class="sib-title">Brothers &amp; sisters <span>Hermanos · children of ${esc(people.carlossr.name)} &amp; ${esc(people.amparo.name)}, oldest to youngest</span></h3>
+    <ol class="sib-list">${siblings.filter(s => people[s.id]).map((s, i) => {
+      const sp = s.spouse && people[s.spouse] ? `<span class="amp" aria-hidden="true">&amp;</span>${card(s.spouse)}` : '';
+      const kids = (s.kids||[]).filter(k => people[k]);
+      return `<li class="sib ${s.you?'is-you':''}"><span class="sib-n" aria-label="Number ${i+1}">${i+1}</span><div class="sib-body">
+        <div class="sib-couple ${sp?'has-spouse':''}">${s.you ? youCard(s.id) : card(s.id)}${sp}</div>
+        ${kids.length ? `<div class="sib-kids"><span class="sib-kids-l">Children · Hijos</span><div class="sib-kids-row">${kids.map(card).join('')}</div></div>` : ''}
+      </div></li>`; }).join('')}</ol>`;
+})();
 $('#line-rincon').innerHTML = branch('carlossr');
 $('#line-jimenez').innerHTML = branch('amparo');
 
@@ -106,6 +119,7 @@ function openSheet(id){
   let h = `<p class="s-rel">${esc(relWord(p))}</p><h2 class="s-name" id="sheetName">${esc(p.name)}</h2>`;
   if (p.living){
     h += `<div class="s-sub">${p.note ? esc(p.note) : ''}</div>
+      ${p.src ? `<p class="s-src">${badge('story')} <span>${esc(p.src.replace(/^Family story · /,''))}</span></p>` : ''}
       <div class="private-note" style="margin-top:14px">${lockSvg.replace('<svg','<svg class="pn"')}<div>${id==='baby' ? 'The newest branch of the family. She’s shown by name only, like all living family.' : 'Living family is shown by name and relationship only, to keep them private.'}</div></div>`;
   } else {
     h += `<div class="s-sub">${p.years ? `<b>${esc(p.years)}</b>` : ''}${p.label ? badge(p.label) : ''}</div>`;

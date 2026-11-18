@@ -399,3 +399,27 @@ h1,h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:-.01em;margin:0
 .hero-photo{display:block;width:100%;height:auto;aspect-ratio:2000/1334;object-fit:cover;border-radius:2px;background:var(--paper2)}
 .photo-frame.wide .photo-caption{margin:8px 0 4px}
 .photo-frame.wide .photo-caption span{color:#9a8571;font-size:16px}
+
+/* brothers & sisters (living: names only) */
+.siblings{max-width:760px;margin:6px auto 26px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px 14px 14px;box-shadow:var(--shadow)}
+.sib-title{font:500 19px/1.2 var(--serif);margin:0 0 12px;text-align:center}
+.sib-title span{display:block;font:500 12.5px/1.4 var(--sans);color:var(--ink2);margin-top:3px}
+.sib-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.sib{display:grid;grid-template-columns:26px 1fr;gap:8px;align-items:start}
+.sib-n{width:24px;height:24px;margin-top:12px;border-radius:50%;display:grid;place-items:center;background:var(--paper2);color:var(--ink2);font:600 12px var(--sans)}
+.sib.is-you .sib-n{background:var(--terra);color:#fff8ee}
+.sib-body{min-width:0;display:grid;gap:8px}
+.sib-couple{display:grid;gap:6px}
+.sib-couple.has-spouse{grid-template-columns:1fr auto 1fr;align-items:stretch}
+.sib-couple .amp{align-self:center;font:italic 400 20px var(--serif);color:var(--terra)}
+.sib .person{padding:9px 11px 9px 14px;box-shadow:none}
+.sib .p-name{font-size:15.5px}
+.sib .p-meta{margin-top:4px}
+.person.you{border-color:#e7c3ae;background:linear-gradient(135deg,#fffaf1,#fbeadf)}
+.sib-kids{border-left:2px dashed var(--line);margin-left:10px;padding-left:12px;display:grid;gap:6px}
+.sib-kids-l{font:600 11px var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--ink2)}
+.sib-kids-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px}
+.sib-kids .p-name{font-size:14.5px}
+.s-src{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:13.5px;color:var(--ink2);margin:10px 0 0}
+@media (max-width:420px){.sib-couple.has-spouse{grid-template-columns:1fr}.sib-couple.has-spouse .amp{justify-self:start;margin:-2px 0 -2px 12px;font-size:17px}}
+@media (min-width:760px){.siblings{padding:20px 22px 18px}.sib-list{gap:14px}.sib-couple.has-spouse{max-width:620px}.sib-couple:not(.has-spouse){max-width:300px}.sib-kids-row{grid-template-columns:repeat(auto-fill,minmax(220px,1fr));max-width:600px}}
