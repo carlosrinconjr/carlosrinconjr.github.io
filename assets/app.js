@@ -32,7 +32,7 @@ function card(id){
   const p = people[id];
   const cls = ['person', p.sex === 'f' ? 'f' : 'm', p.living ? 'living' : ''].join(' ');
   const meta = p.living
-    ? `<span class="lock">${lockSvg} Private · name only</span>`
+    ? (p.byear ? `<span class="p-years">b. ${esc(p.byear)}</span><span class="lock">${lockSvg} Private · name &amp; birth year</span>` : `<span class="lock">${lockSvg} Private · name only</span>`)
     : `${p.years ? `<span class="p-years">${esc(p.years)}</span>` : ''}${p.label ? badge(p.label) : ''}`;
   const ph = !p.living && p.photo;
   const txt = `<span class="p-name">${esc(p.name)}</span>
@@ -58,7 +58,7 @@ $('#root-diana').innerHTML = card('diana');
 /* brothers and sisters, oldest to youngest, with their spouses and children */
 (function drawSiblings(){
   const el = $('#siblings'); if (!el || !siblings.length) return;
-  const youCard = id => `<button class="person m living you" data-id="${id}"><span class="p-name">${esc(people[id].name)}</span><span class="p-rel">You · Tú</span></button>`;
+  const youCard = id => `<button class="person m living you" data-id="${id}"><span class="p-name">${esc(people[id].name)}</span><span class="p-rel">You · Tú</span>${people[id].byear ? `<span class="p-meta"><span class="p-years">b. ${esc(people[id].byear)}</span></span>` : ''}</button>`;
   el.innerHTML = `<h3 class="sib-title">Brothers &amp; sisters <span>Hermanos · children of ${esc(people.carlossr.name)} &amp; ${esc(people.amparo.name)}, oldest to youngest</span></h3>
     <ol class="sib-list">${siblings.filter(s => people[s.id]).map((s, i) => {
       const sp = s.spouse && people[s.spouse] ? `<span class="amp" aria-hidden="true">&amp;</span>${card(s.spouse)}` : '';
@@ -118,9 +118,9 @@ function openSheet(id){
   const ps = (p.parents || []).filter(x => people[x]);
   let h = `<p class="s-rel">${esc(relWord(p))}</p><h2 class="s-name" id="sheetName">${esc(p.name)}</h2>`;
   if (p.living){
-    h += `<div class="s-sub">${p.note ? esc(p.note) : ''}</div>
+    h += `<div class="s-sub">${p.byear ? `<b>b. ${esc(p.byear)}</b>` : ''}${p.note ? esc(p.note) : ''}</div>
       ${p.src ? `<p class="s-src">${badge('story')} <span>${esc(p.src.replace(/^Family story · /,''))}</span></p>` : ''}
-      <div class="private-note" style="margin-top:14px">${lockSvg.replace('<svg','<svg class="pn"')}<div>${id==='baby' ? 'The newest branch of the family. She’s shown by name only, like all living family.' : 'Living family is shown by name and relationship only, to keep them private.'}</div></div>`;
+      <div class="private-note" style="margin-top:14px">${lockSvg.replace('<svg','<svg class="pn"')}<div>${id==='baby' ? 'The newest branch of the family. She’s shown by name only, like all living family.' : (p.byear ? 'Living family is shown by name, relationship, and birth year only, to keep them private.' : 'Living family is shown by name and relationship only, to keep them private.')}</div></div>`;
   } else {
     h += `<div class="s-sub">${p.years ? `<b>${esc(p.years)}</b>` : ''}${p.label ? badge(p.label) : ''}</div>`;
     if (p.link) h += `<p class="s-link"><span class="linkpill">${esc(p.link)}</span></p>`;

@@ -8,18 +8,18 @@ const V='verified', L='likely', S='story';
 
 const people = {
   baby:{name:'Baby girl Rincón', living:true, gen:0, sex:'f', side:'both', rel:'Daughter · Hija', note:'Coming December 2026, the newest branch of the family.', parents:['carlosjr','diana']},
-  carlosjr:{name:'Carlos Rincon Jr.', living:true, gen:1, sex:'m', side:'dad', rel:'Starting point', parents:['carlossr','amparo']},
+  carlosjr:{name:'Carlos Rincon Jr.', living:true, byear:1992, gen:1, sex:'m', side:'dad', rel:'Starting point', parents:['carlossr','amparo']},
   diana:{name:'Diana', living:true, gen:1, sex:'f', side:'mom', rel:'Wife · Esposa', parents:[]},
   /* ---------- Carlos Jr.’s brothers and sisters and their families (all living: names only) ---------- */
-  dorima:{name:'Dorima Hamilton', living:true, today:true, gen:1, sex:'f', side:'dad', rel:'Sister · Hermana', note:'Born Rincon; Hamilton is her married name.', src:'Family story · from Carlos, Nov 2026', parents:['carlossr','amparo']},
+  dorima:{name:'Dorima Hamilton', living:true, byear:1990, today:true, gen:1, sex:'f', side:'dad', rel:'Sister · Hermana', note:'Born Rincon; Hamilton is her married name.', src:'Family story · from Carlos, Nov 2026', parents:['carlossr','amparo']},
   jasonh:{name:'Jason J. Hamilton', living:true, today:true, gen:1, sex:'m', side:'dad', rel:'Brother-in-law · Cuñado', note:'Dorima’s husband.', src:'Family story · from Carlos, Nov 2026', parents:[]},
   penelope:{name:'Penelope Rose Hamilton', living:true, today:true, gen:0, sex:'f', side:'dad', rel:'Niece · Sobrina', note:'Dorima and Jason’s daughter.', src:'Family story · from Carlos, Nov 2026', parents:['dorima','jasonh']},
   alexander:{name:'Alexander Hamilton', living:true, today:true, gen:0, sex:'m', side:'dad', rel:'Nephew · Sobrino', note:'Dorima and Jason’s son.', src:'Family story · from Carlos, Nov 2026', parents:['dorima','jasonh']},
   vanessa:{name:'Vanessa Rincon', living:true, today:true, gen:1, sex:'f', side:'dad', rel:'Sister-in-law · Cuñada', note:'Joshua’s wife, born Salcedo.', src:'Family story · from Carlos, Nov 2026', parents:[]},
   elijah:{name:'Elijah Rincon', living:true, today:true, gen:0, sex:'m', side:'dad', rel:'Nephew · Sobrino', note:'Joshua and Vanessa’s son.', src:'Family story · from Carlos, Nov 2026', parents:['joshua','vanessa']},
   kirsten:{name:'Kirsten “Key” Rincon', living:true, today:true, gen:1, sex:'f', side:'dad', rel:'Sister-in-law · Cuñada', note:'Sammy’s wife.', src:'Family story · from Carlos, Nov 2026', parents:[]},
-  joshua:{name:'Joshua Rincon', living:true, today:true, gen:1, sex:'m', side:'dad', rel:'Brother · Hermano', src:'Family story · from Carlos, Nov 2026', parents:['carlossr','amparo']},
-  daniel:{name:'Daniel Samuel “Sammy” Rincon', living:true, today:true, gen:1, sex:'m', side:'dad', rel:'Brother · Hermano', src:'Family story · from Carlos, Nov 2026', parents:['carlossr','amparo']},
+  joshua:{name:'Joshua Rincon', living:true, byear:1997, today:true, gen:1, sex:'m', side:'dad', rel:'Brother · Hermano', src:'Family story · from Carlos, Nov 2026', parents:['carlossr','amparo']},
+  daniel:{name:'Daniel Samuel “Sammy” Rincon', living:true, byear:2000, today:true, gen:1, sex:'m', side:'dad', rel:'Brother · Hermano', src:'Family story · from Carlos, Nov 2026', parents:['carlossr','amparo']},
 
   /* ---------- Dad's father's line (Rincón) ---------- */
   carlossr:{name:'Carlos Rincon', living:true, gen:2, sex:'m', side:'dad', line:'rincon', parents:['crb','aurora']},
