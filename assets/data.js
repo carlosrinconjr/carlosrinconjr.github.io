@@ -31,10 +31,11 @@ const people = {
     ], parents:['bruno','natalia']},
   aurora:{name:'Aurora Ramírez', living:true, gen:3, sex:'f', side:'dad', line:'rincon', privateNote:'Kept private until we know more.', parents:['jramirez','refugio']},
 
-  bruno:{name:'Bruno Carlos Rincón Barbosa', gen:4, sex:'m', side:'dad', line:'rincon', years:'1902–1989', label:V,
+  bruno:{name:'Bruno Carlos Rincón Barbosa', gen:4, sex:'m', side:'dad', line:'rincon', years:'about 1903–1989', label:V,
     places:['Zacatecas, Zacatecas','Chihuahua, Chihuahua','Torreón, Coahuila'],
     facts:[
-      {t:'Born 6 Oct 1902 in Zacatecas, Zacatecas.', l:L},
+      {t:'Born 6 Oct 1902 in Zacatecas, Zacatecas, per a family tree; no birth record found yet.', l:L, n:'family tree'},
+      {t:'Age 85 on his January 1989 death record, so born about 1903.', l:V, n:'index'},
       {t:'Married Natalia Beltrán on 3 Oct 1931 in Chihuahua, Chihuahua. The record names his parents as Juan Rincón and Juana Barbosa.', l:V},
       {t:'Died 21 Jan 1989 in Torreón, Coahuila, age 85. (One family tree says 20 Jun 1989; the civil record date is used here.)', l:V, n:'index'},
       {t:'His marriage record calls him simply Carlos Rincón.', l:V}
@@ -44,25 +45,25 @@ const people = {
       {t:'Civil marriage, Chihuahua, 1931', l:V, url:FS('QGZM-R2K4'), img:'1931-marriage-carlos-rincon-natalia-beltran.jpg'},
       {t:'Civil death, Torreón, 1989', l:V, n:'index', url:FS('QV5S-3K7F'), img:'1989-death-carlos-bruno-rincon-barbosa.jpg'}
     ], parents:['juanrb','juana']},
-  natalia:{name:'Natalia Beltrán Lozano', gen:4, sex:'f', side:'dad', line:'rincon', years:'1903–1990', label:V,
+  natalia:{name:'Natalia Beltrán Lozano', gen:4, sex:'f', side:'dad', line:'rincon', years:'Married 1931 · Chihuahua', label:V,
     places:['Chihuahua, Chihuahua','Torreón, Coahuila'],
     facts:[
       {t:'Married Bruno Carlos Rincón on 3 Oct 1931 in Chihuahua, age 25. Her parents are named as Luís Beltrán and Luz Lozano.', l:V},
-      {t:'Born 3 Jan 1903 in Chihuahua.', l:L},
-      {t:'Died 3 Aug 1990 in Torreón, Coahuila.', l:L}
+      {t:'Born 3 Jan 1903 in Chihuahua, per a family tree. (Her age of 25 on the 1931 marriage points to about 1906.)', l:L, n:'family tree'},
+      {t:'Died 3 Aug 1990 in Torreón, Coahuila, per a family tree; no death record found yet.', l:L, n:'family tree'}
     ],
     records:[{t:'Civil marriage, Chihuahua, 1931', l:V, url:FS('QGZM-R2K4'), img:'1931-marriage-carlos-rincon-natalia-beltran.jpg'}],
     parents:['joseluis','luz']},
 
-  juanrb:{name:'Juan Rincón Barrón', gen:5, sex:'m', side:'dad', line:'rincon', years:'1879–1951', label:V,
+  juanrb:{name:'Juan Rincón Barrón', gen:5, sex:'m', side:'dad', line:'rincon', years:'Baptized 1879', label:V,
     places:['Zacatecas, Zacatecas'],
     facts:[
       {t:'Baptized 29 May 1879 at Nuestra Señora de Guadalupe, Zacatecas. His parents: Genaro Rincón and Sacramento Barrón.', l:V},
       {t:'Church marriage to Juana Barbosa on 28 Jun 1897, Jesús parish, Zacatecas.', l:L},
       {t:'A family tree also lists a 1929 marriage in Chihuahua, probably the civil registration of the same couple.', l:L},
       {t:'Named as the father on his son Carlos’s 1931 marriage and 1989 death record.', l:V},
-      {t:'Died in 1951.', l:L},
-      {t:'His little brother Marcos (1881–1882) and sister Agustina (1884–1885) died as babies.', l:L}
+      {t:'Died in 1951, per a family tree; no death record found yet.', l:L, n:'family tree'},
+      {t:'His little brother Marcos (baptized 1881, died 1882) and sister Ma. Agustina (baptized 1883) are on Zacatecas church records with the same parents.', l:V}
     ],
     story:"The Rincón family story says Juan’s father, Genaro, came from La Rioja, Spain. Juan’s baptism is the record that proves Genaro was really his dad.",
     records:[
@@ -86,19 +87,19 @@ const people = {
     facts:[{t:'Named as Luz Lozano, mother of the bride, on the 1931 marriage.', l:V},{t:'Born in 1881.', l:L}],
     records:[{t:'Civil marriage of her daughter Natalia, 1931', l:V, url:FS('QGZM-R2K4'), img:'1931-marriage-carlos-rincon-natalia-beltran.jpg'}], parents:[]},
 
-  genaro:{name:'Genaro Rincón', gen:6, sex:'m', side:'dad', line:'rincon', years:'b. about 1849', label:V,
+  genaro:{name:'Genaro Rincón', gen:6, sex:'m', side:'dad', line:'rincon', years:'Living in Zacatecas 1879–1883', label:V,
     places:['La Rioja, Spain (family story)','Zacatecas, Zacatecas'],
     facts:[
-      {t:'Named as the father on his son Juan’s 1879 baptism in Zacatecas.', l:V},
-      {t:'Born or christened about 1849 in Zacatecas.', l:L},
-      {t:'Came from La Rioja, Spain, to Zacatecas around 1850, the first Rincón in Mexico.', l:S},
-      {t:'With Sacramento he also had Marcos and Agustina, who both died as babies.', l:L}
+      {t:'Named as the father on his children’s baptisms in Zacatecas: Juan (1879), Marcos (1881), and Ma. Agustina (1883), and on Marcos’s death in 1882. These records show him living in Zacatecas from 1879 to 1883.', l:V},
+      {t:'His own birth date and place are unknown. One shared family tree gives a christening in Zacatecas about 1849, but it cites no record.', l:L, n:'unsourced family tree'},
+      {t:'No record found so far mentions Spain or La Rioja. If he really was christened in Zacatecas, it may have been an earlier generation that crossed the ocean.', l:V, n:'records checked so far'},
+      {t:'Came from La Rioja, Spain, to Zacatecas around 1850, the first Rincón in Mexico.', l:S}
     ],
-    story:"Carlos Jr.’s dad tells it this way: Genaro de Rincón came over from La Rioja, Spain, around 1850, and he was the first of our Rincóns in Mexico. No record proves the Spain part yet. One family tree places his christening in Zacatecas about 1849, so it may have been Genaro’s own father who crossed the ocean.",
+    story:"Carlos Jr.’s dad tells it this way: Genaro de Rincón came over from La Rioja, Spain, around 1850, and he was the first of our Rincóns in Mexico.",
     records:[{t:'Baptism of his son Juan, Zacatecas, 1879', l:V, url:FS('6MDP-D4T2'), img:'1879-baptism-juan-rincon-barron.jpg'}], parents:[]},
-  sacramento:{name:'Sacramento Barrón', gen:6, sex:'f', side:'dad', line:'rincon', years:'b. about 1861', label:V,
+  sacramento:{name:'Sacramento Barrón', gen:6, sex:'f', side:'dad', line:'rincon', years:'Living in Zacatecas 1879', label:V,
     places:['Zacatecas, Zacatecas'],
-    facts:[{t:'Named as the mother on her son Juan’s 1879 baptism.', l:V},{t:'Born about 1861, per one family tree.', l:L}],
+    facts:[{t:'Named as the mother on her son Juan’s 1879 baptism.', l:V},{t:'Her birth date is unknown. One family tree gives about 1861, without a source.', l:L, n:'unsourced family tree'}],
     records:[{t:'Baptism of her son Juan, Zacatecas, 1879', l:V, url:FS('6MDP-D4T2'), img:'1879-baptism-juan-rincon-barron.jpg'}], parents:[]},
   macedonio:{name:'Macedonio Barbosa', gen:6, sex:'m', side:'dad', line:'rincon', label:L,
     facts:[{t:'Father of Juana Barbosa.', l:L}], records:[], parents:[]},
@@ -180,8 +181,8 @@ const people = {
 
 /* Timeline: only dated events from the research files. who = person id it opens. */
 const events = [
-  {p:'zacatecas', y:'c. 1849', s:1849, t:'Genaro Rincón is born or christened in Zacatecas.', l:L, side:'rincon', who:'genaro'},
-  {p:'larioja', y:'c. 1850', s:1850, t:'Family story: Genaro de Rincón comes from La Rioja, Spain, to Zacatecas.', l:S, side:'rincon', who:'genaro'},
+  {p:'zacatecas', y:'c. 1849', s:1849, t:'Genaro Rincón is born or christened in Zacatecas, per an unsourced family tree.', l:L, side:'rincon', who:'genaro'},
+  {p:'larioja', y:'c. 1850', s:1850, t:'Family story: Genaro de Rincón comes from La Rioja, Spain, to Zacatecas. No record found so far mentions Spain.', l:S, side:'rincon', who:'genaro'},
   {y:'1875', s:1875, t:'José Luis Beltrán González is born (20 Jun).', l:L, side:'rincon', who:'joseluis'},
   {p:'zacatecas', y:'1879', s:1879, t:'Juan Rincón is baptized at Nuestra Señora de Guadalupe, Zacatecas (29 May).', l:V, side:'rincon', who:'juanrb'},
   {p:'canadas', pl:'Los Altos de Jalisco', y:'1884', s:1884, t:'Dámaso Muñoz and Clemencia de la Torre marry in San Miguel el Alto, Jalisco.', l:L, side:'jimenez', who:'damaso'},

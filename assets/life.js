@@ -79,7 +79,7 @@ window.LIFE = {
    {i:'📚', h:'School', t:'Most people could not read. In Mexico’s 1910 census, only 33% of men and 27% of women were literate.', s:'porf'}
   ],
   events:[
-   {y:'1873', t:'The world price of silver dropped, a hard blow for a silver city.', who:'Genaro was about 24.', s:'porf'},
+   {y:'1873', t:'The world price of silver dropped, a hard blow for a silver city.', who:'Genaro was about 24, if the unsourced family-tree birth year of about 1849 is right.', s:'porf'},
    {y:'1884', t:'Trains began running from Zacatecas to Mexico City and to El Paso.', who:'Juan was about 4.', s:'zacEN'},
    {y:'June 1914', t:'The Battle of Zacatecas: Pancho Villa’s army took the city from Victoriano Huerta’s forces, opening the road to Mexico City.', who:'Juan was 35 and Bruno 11. We don’t know whether the family was still living in the city by then.', s:'zacEN'}
   ],

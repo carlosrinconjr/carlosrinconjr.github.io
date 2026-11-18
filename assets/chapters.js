@@ -16,10 +16,10 @@ window.CHAPTERS = [
   ],
   sources:[['La Rioja (Spain)',WP('La_Rioja_(Spain)')],['Rioja (wine)',WP('Rioja_(wine)')]],
   photos:[{f:'logrono-calle-portales-1900s.jpg', cap:'Calle Portales and the cathedral towers, Logroño, 1900–1910', by:'Alberto Muro', src:'Logroño municipal photo archive, via Wikimedia Commons', lic:'Public domain', url:CM('Vista_de_la_calle_portales.jpg')}],
-  family:[{who:'genaro', t:'The family says he came from La Rioja to Zacatecas around 1850. No record proves this yet, and one family tree places his christening in Zacatecas around 1849, so it may have been an earlier generation.', l:S}],
+  family:[{who:'genaro', t:'The family says he came from La Rioja to Zacatecas around 1850. No record found so far mentions Spain or La Rioja, and one unsourced family tree places his christening in Zacatecas around 1849, so it may have been an earlier generation.', l:S}],
   note:'This chapter is a family story. We haven’t found a record that ties the Rincóns to La Rioja yet.'},
 
- {k:'zacatecas', n:'Zacatecas', es:'Zacatecas, Zacatecas', era:'1849–1902 · the silver city', l:V,
+ {k:'zacatecas', n:'Zacatecas', es:'Zacatecas, Zacatecas', era:'1879–1902 · the silver city', l:V,
   illus:'illus-zacatecas.jpg',
   history:[
    'Zacatecas began in the mid-1500s as a Spanish mining camp at the foot of the Cerro de la Bufa, after rich silver deposits were found in its hills. It quickly became one of the most important mining cities in New Spain.',
@@ -33,7 +33,7 @@ window.CHAPTERS = [
    {f:'zacatecas-cathedral-1880.jpg', cap:'Zacatecas Cathedral, 1880', by:'Unknown photographer', src:'INAH Mediateca, via Wikimedia Commons', lic:'Public domain (PD-old-100)', url:CM('Zacatecas_Cathedral_in_1880.jpg')}
   ],
   family:[
-   {who:'genaro', t:'Born or christened here about 1849.', l:L},
+   {who:'genaro', t:'Named as the father on his children’s baptisms here (1879, 1881, 1883) and on Marcos’s 1882 death. A christening here about 1849 comes only from an unsourced family tree.', l:V},
    {who:'sacramento', t:'Named as Juan’s mother on his 1879 baptism here.', l:V},
    {who:'juanrb', t:'Baptized 29 May 1879 at Nuestra Señora de Guadalupe, Zacatecas.', l:V},
    {who:'juana', t:'Married Juan Rincón in the church on 28 Jun 1897, Jesús parish, Zacatecas.', l:L},
